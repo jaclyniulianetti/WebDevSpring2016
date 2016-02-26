@@ -2,10 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <!-- Angular JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+
+    <!-- Angular JS Routing Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+
+    <!--Bootstrap CDN-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+
+    <!--jQuery CDN-->
+    <link href="//code.jquery.com/jquery-1.12.0.min.js" rel="script">
+    <link href="//code.jquery.com/jquery-migrate-1.2.1.min.js" rel="script">
+
+    <!-- Load app.js and config.js -->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <title>Header</title>
+    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav ng-controller="HeaderController" class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -19,10 +40,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../users/register.view.html">Register</span></a></li>
-                <li><a href="../users/login.view.html">Login</span></a></li>
-                <li><a href="#">Username</span></a></li>
-                <li><a href="#">Logout</span></a></li>
+                <li><a href="#/register">Register</span></a></li>
+                <li><a href="#/login">Login</span></a></li>
+                <li><a href="/">Logout</span></a></li>
+                <li><a href="#/profile">Username</span></a></li>
+                <li><a href="#/admin">Admin</span></a></li>
             </ul>
         </div>
     </div>

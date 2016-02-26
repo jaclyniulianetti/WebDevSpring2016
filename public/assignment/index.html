@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="FormBuilderApp">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Angular JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+
+    <!-- Angular JS Routing Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
 
     <!--Bootstrap CDN-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
@@ -10,22 +16,26 @@
     <!--jQuery CDN-->
     <link href="//code.jquery.com/jquery-1.12.0.min.js" rel="script">
     <link href="//code.jquery.com/jquery-migrate-1.2.1.min.js" rel="script">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- Load app.js and config.js -->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <title>Index</title>
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
-<body>
-<div class="container-fluid content">
-    <div class="row">
-        <div ng-controller="SidebarController" class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li><a class="noHighlight" href="home.view.html">Home</a></li>
-                <li><a class="noHighlight" href="../users/profile.view.html">Profile</a></li>
-                <li><a class="noHighlight" href="../admin/admin.view.html">Admin</a></li>
-                <li><a class="noHighlight" href="../forms/forms.view.html">Forms</a></li>
-            </ul>
+
+<body ng-controller="MainController">
+    <div ng-view="main">
+        <div ng-include="'/views/header/header.view.html'">
+
         </div>
+        <div ng-include="'/views/sidebar/sidebar.view.html'">
+
+        </div>
+
     </div>
-</div>
+
 </body>
 </html>
