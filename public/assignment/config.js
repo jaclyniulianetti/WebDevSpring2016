@@ -3,6 +3,8 @@
  */
 (function()
 {
+    "use strict";
+
     angular
         .module("FormBuilderApp")
         .config(function($routeProvider)
@@ -35,6 +37,9 @@
                 .when("/admin", {
                     templateUrl: "views/users/admin.view.html",
                     controller: 'AdminController'
+                })
+                .otherwise({
+                    redirectTo: "/home"
                 });
         });
 })();
