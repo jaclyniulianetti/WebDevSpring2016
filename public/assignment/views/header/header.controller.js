@@ -1,12 +1,13 @@
 /**
  * Created by Jaclyn on 2/24/16.
  */
-(function()
-{
+(function(){
+    "use strict";
     angular
         .module("FormBuilderApp")
-        .controller("HeaderController", MainController);
-    function HeaderController($scope) {
+        .controller("HeaderController", HeaderController);
 
+    function HeaderController($scope, $location){
+        $scope.location = $location;
     }
 })();

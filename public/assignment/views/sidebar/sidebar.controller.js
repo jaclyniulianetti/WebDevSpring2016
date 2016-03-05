@@ -1,12 +1,13 @@
 /**
  * Created by Jaclyn on 2/24/16.
  */
-(function()
-{
+(function(){
+    "use strict";
     angular
         .module("FormBuilderApp")
-        .controller("SidebarController", MainController);
-    function SidebarController($scope) {
+        .controller("SidebarController", SidebarController);
 
+    function SidebarController($scope, $location){
+        $scope.location = $location;
     }
 })();
