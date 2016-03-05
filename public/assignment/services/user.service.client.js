@@ -7,7 +7,7 @@
         .module("FormBuilderApp")
         .factory("UserService", UserService);
 
-    function UserService($rootScope) {
+    function UserService() {
         var currentUsers = [];
         currentUsers = [
             {	"_id":123, "firstName":"Alice",            "lastName":"Wonderland",
