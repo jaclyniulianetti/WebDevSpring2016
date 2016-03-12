@@ -14,7 +14,7 @@
     <!--jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <title>Sign In</title>
+    <title>Following</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -29,23 +29,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../views/landingPage.view.html">Fitness Accountability</a>
+            <a class="navbar-brand" href="../home/home.view.html">Fitness Accountability</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Sign in</a></li>
-                <li><a href="../views/signUp.view.html">Sign up</a></li>
+                <li><a href="../user/newWorkout.view.html">New Workout</a></li>
+                <li><a href="../views/followers.view.html">Followers</a></li>
+                <li><a href="#">Following</a></li>
+                <li><a href="../user/settings.view.html">Settings</a></li>
+                <li><a href="../home/landingPage.view.html">Log out</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-<div class="input-group input-group-lg">
-    <input type="text" class="form-control" placeholder="Username">
-    <input type="password" class="form-control" placeholder="Password">
-    <a href="../views/home.view.html" class="btn btn-default" role="button">Sign in</a>
-</div>
+<div class="input-group">
+    <input type="text" class="form-control" placeholder="Search for other users">
+      <span class="input-group-btn">
+        <a href="../search/search.view.html" class="btn btn-default" role="button">Search</a>
+      </span>
+</div><!-- /input-group -->
+<h1>People you are following:</h1>
+<img src="..." alt="Username"><br>
+<img src="..." alt="Username"><br>
+<img src="..." alt="Username"><br>
+<img src="..." alt="Username"><br>
+<img src="..." alt="Username"><br>
+<img src="..." alt="Username"><br>
 </body>
 </html>

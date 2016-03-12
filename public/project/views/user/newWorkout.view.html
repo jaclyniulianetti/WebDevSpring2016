@@ -14,7 +14,7 @@
     <!--jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <title>Followers</title>
+    <title>New Workout</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -29,33 +29,54 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../views/home.view.html">Fitness Accountability</a>
+            <a class="navbar-brand" href="../home/home.view.html">Fitness Accountability</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../views/newWorkout.view.html">New Workout</a></li>
-                <li><a href="#">Followers</a></li>
-                <li><a href="../views/following.view.html">Following</a></li>
-                <li><a href="../views/settings.view.html">Settings</a></li>
-                <li><a href="../views/landingPage.view.html">Log out</a></li>
+                <li><a href="#">New Workout</a></li>
+                <li><a href="../followers.view.html">Followers</a></li>
+                <li><a href="../otherUsers/following.view.html">Following</a></li>
+                <li><a href="settings.view.html">Settings</a></li>
+                <li><a href="../home/landingPage.view.html">Log out</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="input-group">
-    <input type="text" class="form-control" placeholder="Search for other users">
-      <span class="input-group-btn">
-        <a href="../views/search.view.html" class="btn btn-default" role="button">Search</a>
-      </span>
-</div><!-- /input-group -->
-<h1>People who are following you:</h1>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                What day did you work out?:<br>
+                <input type="date" name="day">
+            </form>
+            <form>
+                What types of exercise(s) did you do?<br>
+                <input type="checkbox" name="ex1" value="Aerobic"> Aerobic<br>
+                <input type="checkbox" name="ex2" value="Weight"> Weight Training<br>
+                <input type="checkbox" name="ex3" value="Flex"> Flexibility<br>
+                <input type="checkbox" name="ex4" value="Other"> <input type="text" name="other" value="Other"><br><br>
+            </form>
+            <form>
+                How intense was your workout? <br>
+                <input type="range" name="points" min="0" max="5">
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h1>Aerobic</h1>
+            <form>
+                How many minutes did you work out for?:<br>
+                <input type="number" name="minutes">
+            </form>
+            <form>
+                <input type="radio" name="aerobic" value="hiit" checked> High-Intensity Interval Training<br>
+                <input type="radio" name="aerobic" value="ss"> Steady-State<br>
+            </form>
+        </div>
+    </div>
+</div>
+<a href="../home/home.view.html" class="btn btn-default" role="button">Create Workout</a>
 </body>
+
 </html>

@@ -14,7 +14,7 @@
     <!--jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <title>Search</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -29,33 +29,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../views/home.view.html">Fitness Accountability</a>
+            <a class="navbar-brand" href="../home/landingPage.view.html">Fitness Accountability</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../views/newWorkout.view.html">New Workout</a></li>
-                <li><a href="../views/followers.view.html">Followers</a></li>
-                <li><a href="../views/following.view.html">Following</a></li>
-                <li><a href="../views/settings.view.html">Settings</a></li>
-                <li><a href="../views/landingPage.view.html">Log out</a></li>
+                <li><a href="signIn.view.html">Sign in</a></li>
+                <li><a href="#">Sign up</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="input-group">
-    <input type="text" class="form-control" placeholder="Search for other users">
-      <span class="input-group-btn">
-        <a href="../views/search.view.html" class="btn btn-default" role="button">Search</a>
-      </span>
-</div><!-- /input-group -->
-<h1>Searching for "username"...</h1>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
-<img src="..." alt="Username"><br>
+
+<div class="input-group input-group-lg">
+    <input type="email" class="form-control" placeholder="Email">
+    <input type="text" class="form-control" placeholder="Username">
+    <input type="password" class="form-control" placeholder="Password">
+    <a href="../home/home.view.html" class="btn btn-default" role="button">Sign in</a>
+</div>
 </body>
 </html>
