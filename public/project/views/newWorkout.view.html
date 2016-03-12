@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular.js/1.4.5/angular-route.js"></script>
+    <!--Bootstrap CDN-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+
+    <!--jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <title>New Workout</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../views/home.view.html">Fitness Accountability</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">New Workout</a></li>
+                <li><a href="../views/followers.view.html">Followers</a></li>
+                <li><a href="../views/following.view.html">Following</a></li>
+                <li><a href="../views/settings.view.html">Settings</a></li>
+                <li><a href="../views/landingPage.view.html">Log out</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                What day did you work out?:<br>
+                <input type="date" name="day">
+            </form>
+            <form>
+                What types of exercise(s) did you do?<br>
+                <input type="checkbox" name="ex1" value="Aerobic"> Aerobic<br>
+                <input type="checkbox" name="ex2" value="Weight"> Weight Training<br>
+                <input type="checkbox" name="ex3" value="Flex"> Flexibility<br>
+                <input type="checkbox" name="ex4" value="Other"> <input type="text" name="other" value="Other"><br><br>
+            </form>
+            <form>
+                How intense was your workout? <br>
+                <input type="range" name="points" min="0" max="5">
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h1>Aerobic</h1>
+            <form>
+                How many minutes did you work out for?:<br>
+                <input type="number" name="minutes">
+            </form>
+            <form>
+                <input type="radio" name="aerobic" value="hiit" checked> High-Intensity Interval Training<br>
+                <input type="radio" name="aerobic" value="ss"> Steady-State<br>
+            </form>
+        </div>
+    </div>
+</div>
+<a href="../views/home.view.html" class="btn btn-default" role="button">Create Workout</a>
+</body>
+
+</html>
