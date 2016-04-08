@@ -7,9 +7,9 @@
         .module("FormBuilderApp")
         .factory("UserService", UserService);
 
-    function UserService() {
-        var currentUsers = [];
-        currentUsers = [
+    function UserService($rootScope) {
+        var model ={
+            currentUsers: [
             {	"_id":123, "firstName":"Alice",            "lastName":"Wonderland",
                 "username":"alice",  "password":"alice",   "roles": ["student"]		},
             {	"_id":234, "firstName":"Bob",              "lastName":"Hope",
@@ -20,46 +20,56 @@
                 "username":"dan",    "password":"dan",     "roles": ["faculty", "admin"]},
             {	"_id":567, "firstName":"Edward",           "lastName":"Norton",
                 "username":"ed",     "password":"ed",      "roles": ["student"]		}
-        ];
+            ],
+            findUserByCredentials: findUserByCredentials,
+            findAllUsers: findAllUsers,
+            createUser: createUser,
+            deleteUserById: deleteUserById,
+            updateUser: updateUser
+        };
+        return model;
 
-        function findUserByCredentials(username, password, callback) {
-            for (var i = 0; i < currentUsers.length; i++) {
-                if (currentUsers[i].username == username && currentUSers[i].password == password) {
-                    callback(currentUsers[i]);
+        function findUserByCredentials(username, password) {
+            for (var i = 0; i < model.currentUsers.length; i++) {
+                if (model.currentUsers[i].username == username && model.currentUsers[i].password == password) {
+                    return model.currentUsers[i];
+                }
+            }
+            return null;
+        }
+
+        function findAllUsers() {
+            return model.currentUsers;
+        }
+
+        function createUser(user) {
+            var user = {
+                _id : (new Date).getTime()
+            }
+            model.currentUsers.push(user);
+            return user;
+        }
+
+        function deleteUserById(userId) {
+            for (var i = 0; i < model.currentUsers.length; i++) {
+                if (model.currentUsers[i]._id == userId) {
+                    model.currentUsers.splice(i, 1);
                     break;
                 }
             }
-            callback(null);
+            return currentUsers;
         }
 
-        function findAllUsers(callback) {
-            callback(currentUsers);
-        }
-
-        function createUser(user, callback) {
-            user._id = (new Date).getTime();
-            currentUsers.push(user);
-            callback(user);
-        }
-
-        function deleteUserById(userId, callback) {
-            for (var i = 0; i < currentUsers.length; i++) {
-                if (currentUsers[i]._id == userId) {
-                    currentUsers.splice(i, 1);
-                    break;
-                }
+        function updateUser(currentUser) {
+            var user = model.findUserByCredentials(currentUser.username, currentUser.password);
+            if (user != null) {
+                user.firstName = currentUser.firstName;
+                user.lastName = currentUser.lastName;
+                user.email = currentUser.email;
+                return user;
             }
-            callback(currentUsers);
-        }
-
-        function updateUser(userId, user, callback) {
-            for (var i = 0; i < currentUsers.length; i++) {
-                if (currentUsers[i]._id == userId) {
-                    user._id = userId;
-                    currentUsers[i] = user;
-                    callback(currentUsers[i]);
-                    break;
-                }
+            else {
+                return null;
             }
         }
     }
