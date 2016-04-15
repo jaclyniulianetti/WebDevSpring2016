@@ -21,6 +21,9 @@
             {	"_id":567, "firstName":"Edward",           "lastName":"Norton",
                 "username":"ed",     "password":"ed",      "roles": ["student"]		}
             ],
+            currentUser: null,
+            setCurrentUser: setCurrentUser,
+            getCurrentUser: getCurrentUser,
             findUserByCredentials: findUserByCredentials,
             findAllUsers: findAllUsers,
             createUser: createUser,
@@ -29,10 +32,20 @@
         };
         return model;
 
-        function findUserByCredentials(username, password) {
-            for (var i = 0; i < model.currentUsers.length; i++) {
-                if (model.currentUsers[i].username == username && model.currentUsers[i].password == password) {
-                    return model.currentUsers[i];
+        function setCurrentUser(user) {
+            model.currentUser = user;
+            $rootScope.currentUser = user;
+        }
+
+        function getCurrentUser() {
+            return model.currentUser;
+        }
+
+        function findUserByCredentials(credentials) {
+            for (var u in model.currentUsers) {
+                if (model.currentUsers[u].username === credentials.username &&
+                    model.currentUsers[u].password === credentials.password) {
+                    return model.currentUsers[u];
                 }
             }
             return null;
@@ -42,9 +55,13 @@
             return model.currentUsers;
         }
 
-        function createUser(user) {
+        function createUser(credentials) {
             var user = {
-                _id : (new Date).getTime()
+                _id : (new Date).getTime(),
+                username : credentials.username,
+                password : credentials.password,
+                email: credentials.password,
+                roles: []
             }
             model.currentUsers.push(user);
             return user;

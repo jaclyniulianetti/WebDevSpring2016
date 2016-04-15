@@ -4,13 +4,16 @@
         .module("FormBuilderApp")
         .controller("LoginController", LoginController);
 
-    function LoginController($location, $scope, UserService, $rootScope){
+    function LoginController($scope, UserService, $location, $rootScope){
         $scope.login = login;
 
         function login(user) {
-            UserService.findUserByCredentials($scope.username, $scope.password);
-            $rootScope.user = user;
-            $location.url("/profile");
+            var user = UserService.findUserByCredentials({username: user.username, password: user.password});
+            if (user) {
+                $rootScope.currentUser = user;
+                UserService.setCurrentUser(user);
+                $location.url("/profile");
+            }
         }
     }
 })();

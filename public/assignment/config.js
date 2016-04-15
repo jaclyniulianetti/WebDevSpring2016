@@ -4,7 +4,6 @@
 (function()
 {
     "use strict";
-
     angular
         .module("FormBuilderApp")
         .config(function($routeProvider)
@@ -35,7 +34,7 @@
                     controller: 'ProfileController'
                 })
                 .when("/admin", {
-                    templateUrl: "views/users/admin.view.html",
+                    templateUrl: "views/admin/admin.view.html",
                     controller: 'AdminController'
                 })
                 .otherwise({

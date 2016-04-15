@@ -11,9 +11,21 @@
         $scope.register = register;
 
         function register(user) {
-            var newUser = UserService.createUser($scope.user);
-            $rootScope = newUser;
-            $location.url("/profile");
+            if (user != null && user.username && user.password &&
+                user.verifyPassword && user.password == user.verifyPassword) {
+                var newUser = UserService.createUser($scope.user);
+                UserService.setCurrentUser(newUser);
+                $location.url("/profile");
+                var newUser = UserService.createUser({
+                    username: user.username,
+                    password: user.password,
+                    email: user.email
+                });
+                $rootScope = newUser;
+                UserService.setCurrentUser(newUser);
+                $location.url("/profile");
+            }
         }
     }
 })();
+
