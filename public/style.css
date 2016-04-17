@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+#intro {
+    background-color: #B33B85;
+    color: #eeeeee;
+    text-align: center;
+    padding: 15px;
+    padding-top: 30px;
+}
+h1 {
+    font-family:'Sacramento';
+    font-size: 60px;
+}
+p {
+    font-family: 'Open Sans';
+    font-size: 15px;
+}
+#footer {
+    text-align: center;
+    font-family: 'Open Sans';
+    margin: 20px;
+}
+.links {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 15px;
+    margin: 20px;
+}
+.links:hover {
+    color: #545454;
+    text-decoration: none;
+}
